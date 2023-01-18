@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
 })
 export class BasicsComponent {
 
+  lowerName: string = "José";
+  upperName: string = "JOSÉ";
+  fullName: string = "JosE PaBÓn";
+
+  date: Date = new Date();
+
 }
