@@ -32,6 +32,30 @@ export class NoCommonsComponent {
   deleteName(){
     this.clients.shift();
   }
-  
+
+  //KeyValue Pipe
+  persona = {
+    nombre: 'Fernando',
+    edad: 35,
+    direccion: 'Ottawa, Canadá'
+  }
+
+  //JSON pipe
+  heroes = [
+    {
+      nombre: 'Superman',
+      vuela: true
+    },
+    {
+      nombre: 'Robin',
+      vuela: false
+    },
+    {
+      nombre: 'Aquaman',
+      vuela: false
+    }
+    
+    
+  ]
 
 }
