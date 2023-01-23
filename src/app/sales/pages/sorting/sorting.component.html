@@ -1,6 +1,83 @@
 <div class="text-layout">
     <h1>Pipes Personalizados</h1>
     <p>Pipes created by {{ "our" | uppercasecustom:isUpperCase }}</p>
+</div>
 
-    <button pButton type="button" label="Toggle UpperCase" class="p-button-success" (click)="changeUpperCase()"></button>
+<p-toolbar>
+    <div class="p-toolbar-group-start">
+
+
+    </div>
+
+    <div class="p-toolbar-group-end">
+        <div class="grid">
+            <button pButton 
+                type="button" 
+                label="Toggle UpperCase" 
+                class="mr-1 mb-1 p-button-warning " 
+                (click)="changeUpperCase()">
+            </button>
+            <button pButton icon="pi pi-sort"
+                label="By name"
+                class="mr-1 mb-1" 
+                (click)="orderBy = 'name'">
+            </button>
+            <button pButton icon="pi pi-sort"
+                label="By flying"
+                class="mr-1 mb-1 p-button-success" 
+                (click)="orderBy = 'flying'">
+            </button>
+            <button pButton icon="pi pi-sort"
+                label="By color"
+                class="mr-1 mb-1 p-button-help"
+                (click)="orderBy = 'color'">
+            </button>
+        </div>
+        
+
+    </div>
+</p-toolbar>
+
+<div class="grid">
+    <div class="col mt-2">
+        <p-table [value]="heroes | sorting: orderBy">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>FLYING</th>
+                    <th>Color</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+                <tr>
+                    <td>{{ heroe.name }}</td>
+                    <td>{{ heroe.flying | flying | titlecase }}</td>
+                    <td>{{ heroe.color }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        
+    </div>
+</div>
+
+<div class="grid">
+    <div class="col mt-2">
+        <p-table [value]="heroes | slice:0">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name" >Name<p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="flying">FLYING<p-sortIcon field="flying"></p-sortIcon></th>
+                    <th pSortableColumn="color">Color<p-sortIcon field="color"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+                <tr>
+                    <td>{{ heroe.name }}</td>
+                    <td>{{ heroe.flying | flying | titlecase }}</td>
+                    <td>{{ heroe.color }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        
+    </div>
 </div>
