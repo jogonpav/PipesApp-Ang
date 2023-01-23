@@ -19,7 +19,7 @@ const routes: Routes = [
     component: NoCommonsComponent
   },
   {
-    path: 'ordenar',
+    path: 'sorting',
     component: SortingComponent
   },
   {

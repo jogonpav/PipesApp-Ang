@@ -1,1 +1,6 @@
-<p>sorting works!</p>
+<div class="text-layout">
+    <h1>Pipes Personalizados</h1>
+    <p>Pipes created by {{ "our" | uppercasecustom:isUpperCase }}</p>
+
+    <button pButton type="button" label="Toggle UpperCase" class="p-button-success" (click)="changeUpperCase()"></button>
+</div>
